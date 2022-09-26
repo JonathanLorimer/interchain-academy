@@ -425,6 +425,23 @@
         "type": "github"
       }
     },
+    "ignite-cli-src_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662991379,
+        "narHash": "sha256-sVgIjecswxD8OBXRXoVk2BNsTXzUcYAb6QZk0rVrQqo=",
+        "owner": "ignite",
+        "repo": "cli",
+        "rev": "21c6430cfcc17c69885524990c448d4a3f56461c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ignite",
+        "ref": "v0.24.0",
+        "repo": "cli",
+        "type": "github"
+      }
+    },
     "iris-src": {
       "flake": false,
       "locked": {
@@ -702,6 +719,7 @@
         "cosmos-nix": "cosmos-nix",
         "devshell": "devshell",
         "flake-utils": "flake-utils_4",
+        "ignite-cli-src": "ignite-cli-src_2",
         "nixpkgs": "nixpkgs_4",
         "rust-overlay": "rust-overlay_2"
       }
