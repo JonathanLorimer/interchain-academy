@@ -5,8 +5,9 @@
     rust-overlay.url = github:oxalica/rust-overlay;
     devshell.url = github:numtide/devshell;
     cosmos-nix.url = github:informalsystems/cosmos.nix;
-    ignite-cli-src.flake = false;
-    ignite-cli-src.url = github:ignite/cli/v0.24.0;
+    cosmos-nix.inputs.nixpkgs.follows = "nixpkgs";
+    # ignite-cli-src.flake = false;
+    # ignite-cli-src.url = github:ignite/cli/v0.24.0;
   };
 
   outputs = {
@@ -15,7 +16,7 @@
     rust-overlay,
     devshell,
     cosmos-nix,
-    ignite-cli-src,
+    # ignite-cli-src,
     self,
   }:
     with flake-utils.lib;
@@ -28,17 +29,17 @@
           ];
         };
         rust-toolchain = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
-        ignite-cli = pkgs.buildGoModule rec {
-                name = "ignite-cli";
-                src = ignite-cli-src;
-                vendorSha256 = "sha256-P1NYgvdobi6qy1sSKFwkBwPRpLuvCJE5rCD2s/vvm14=";
-                doCheck = false;
-                ldflags = ''
-                  -X github.com/ignite/cli/ignite/version.Head=${src.rev}
-                  -X github.com/ignite/cli/ignite/version.Version=v0.24.0
-                  -X github.com/ignite/cli/ignite/version.Date=${builtins.toString (src.lastModified)}
-                '';
-              };
+        # ignite-cli = pkgs.buildGoModule rec {
+        #         name = "ignite-cli";
+        #         src = ignite-cli-src;
+        #         vendorSha256 = "sha256-P1NYgvdobi6qy1sSKFwkBwPRpLuvCJE5rCD2s/vvm14=";
+        #         doCheck = false;
+        #         ldflags = ''
+        #           -X github.com/ignite/cli/ignite/version.Head=${src.rev}
+        #           -X github.com/ignite/cli/ignite/version.Version=v0.24.0
+        #           -X github.com/ignite/cli/ignite/version.Date=${builtins.toString (src.lastModified)}
+        #         '';
+        #       };
       in {
         devShells.default = pkgs.devshell.mkShell {
           commands = [
@@ -49,7 +50,7 @@
             }
             {
               help = "Cli for generating sdk components";
-              package = ignite-cli;
+              package = cosmos-nix.packages.${system}.ignite-cli;
               name = "ignite";
               category = "development tools";
             }
