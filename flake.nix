@@ -33,6 +33,12 @@
               package = cosmos-nix.packages.${system}.simd;
               category = "chain tools";
             }
+            {
+              help = "Cli for generating sdk components";
+              package = cosmos-nix.packages.${system}.ignite-cli;
+              name = "ignite";
+              category = "development tools";
+            }
           ];
           devshell = {
             name = "Interchain Academy";

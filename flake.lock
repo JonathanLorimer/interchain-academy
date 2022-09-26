@@ -52,6 +52,7 @@
         "ibc-go-v5-src": "ibc-go-v5-src",
         "ibc-rs-src": "ibc-rs-src",
         "ica-src": "ica-src",
+        "ignite-cli-src": "ignite-cli-src",
         "iris-src": "iris-src",
         "ixo-src": "ixo-src",
         "juno-src": "juno-src",
@@ -80,11 +81,11 @@
         "wasmvm_1_beta7-src": "wasmvm_1_beta7-src"
       },
       "locked": {
-        "lastModified": 1663683831,
-        "narHash": "sha256-2z2KaLtOYlOh07446E0x2A6Eige+buCDUzOLHSmOL38=",
+        "lastModified": 1664209258,
+        "narHash": "sha256-/2jEt7A3Yg9Bju8gALxB6V6CDKzApWZbRAlPSo4AXU4=",
         "owner": "informalsystems",
         "repo": "cosmos.nix",
-        "rev": "a6abdb0c46b6e7e7f90dabc4d07b23e660dc7a58",
+        "rev": "5de0a9abe10e51ef4c1165bba63f6812efd32a41",
         "type": "github"
       },
       "original": {
@@ -404,6 +405,23 @@
       "original": {
         "owner": "cosmos",
         "repo": "interchain-accounts-demo",
+        "type": "github"
+      }
+    },
+    "ignite-cli-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662991379,
+        "narHash": "sha256-sVgIjecswxD8OBXRXoVk2BNsTXzUcYAb6QZk0rVrQqo=",
+        "owner": "ignite",
+        "repo": "cli",
+        "rev": "21c6430cfcc17c69885524990c448d4a3f56461c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ignite",
+        "ref": "v0.24.0",
+        "repo": "cli",
         "type": "github"
       }
     },
