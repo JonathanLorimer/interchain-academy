@@ -57,6 +57,7 @@
               # Tools
               rust-toolchain
               go_1_19
+              nodejs-18_x
             ];
           };
         };
