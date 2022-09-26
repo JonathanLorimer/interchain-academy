@@ -27,10 +27,19 @@
         rust-toolchain = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default);
       in {
         devShells.default = pkgs.devshell.mkShell {
+          commands = [
+            {
+              help = "Simulate a cosmos sdk chain using the simapp binary";
+              package = cosmos-nix.packages.${system}.simd;
+              category = "chain tools";
+            }
+          ];
           devshell = {
             name = "Interchain Academy";
             packages = with pkgs; [
+              # Chain tools
               cosmos-nix.packages.${system}.simd
+
               # Rust build inputs
               pkg-config
               openssl
@@ -41,6 +50,7 @@
 
               # Tools
               rust-toolchain
+              go_1_19
             ];
           };
         };
